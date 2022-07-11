@@ -12,8 +12,7 @@
  */
 int _printf(const char *format, ...)
 {
-	int printed_chars = 0;
-    int tempNo = 0;
+	int printed_chars, tempNo = 0;
 	va_list arg_list;
 
 	if (format == NULL)
