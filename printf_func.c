@@ -27,8 +27,8 @@ int _printf(const char *format, ...)
 	if (*format == '%')
 	{
 		tempNo = compute_args(*(++format), arg_list);
-        if (tempNo != -1)
-            printed_chars += tempNo;
+	if (tempNo != -1)
+		printed_chars += tempNo;
 	} else
 	{
 		printed_chars++;
