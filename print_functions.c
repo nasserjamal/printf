@@ -47,7 +47,7 @@ int no_percent(va_list list)
 }
 
 /**
- * no_char - prints and counts char
+ * no_int - prints and counts char
  *
  * @list: args list
  * Return: No of args
