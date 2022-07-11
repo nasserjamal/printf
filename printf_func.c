@@ -13,6 +13,7 @@
 int _printf(const char *format, ...)
 {
 	int printed_chars = 0;
+    int tempNo = 0;
 	va_list arg_list;
 
 	if (format == NULL)
@@ -25,7 +26,9 @@ int _printf(const char *format, ...)
 		break;
 	if (*format == '%')
 	{
-		printed_chars += compute_args(*(++format), arg_list);
+		tempNo = compute_args(*(++format), arg_list);
+        if (tempNo != -1)
+            printed_chars += tempNo;
 	} else
 	{
 		printed_chars++;
