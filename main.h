@@ -21,5 +21,6 @@ int compute_args(char sign, va_list args);
 int no_char(va_list);
 int no_string(va_list);
 int no_percent(va_list);
+int no_int(va_list);
 
 #endif

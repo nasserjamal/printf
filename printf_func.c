@@ -12,7 +12,7 @@
  */
 int _printf(const char *format, ...)
 {
-	int printed_chars, tempNo = 0;
+	int printed_chars = 0, tempNo = 0;
 	va_list arg_list;
 
 	if (format == NULL)
@@ -56,6 +56,7 @@ symbol_t f_list[] = {
 		{"c", no_char},
 		{"s", no_string},
 		{"%", no_percent},
+		{"d", no_int},
 		{NULL, NULL}
 	};
 for (j = 0; f_list[j].sym != NULL; j++)
@@ -69,47 +70,4 @@ for (j = 0; f_list[j].sym != NULL; j++)
 	}
 	}
 	return (-1);
-}
-
-/**
- * no_char - prints and counts char
- *
- * @list: args list
- * Return: No of args
- */
-int no_char(va_list list)
-{
-	char a = va_arg(list, int);
-
-	write(1, &a, 1);
-	return (1);
-}
-
-/**
- * no_string - prints and counts string
- *
- * @list: args list
- * Return: No of args
- */
-int no_string(va_list list)
-{
-	char *a = va_arg(list, char*);
-
-	write(1, a, strlen(a));
-	return (strlen(a));
-}
-
-
-/**
- * no_percent - prints and counts percentage
- *
- * @list: args list
- * Return: No of chars
- */
-int no_percent(va_list list)
-{
-	va_arg(list, int);
-
-	write(1, "%", 1);
-	return (1);
 }
